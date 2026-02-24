@@ -1,6 +1,6 @@
-OLA Ride Analytics Dashboard (SQL + Power BI)
-📌 Project Overview
+## OLA Ride Analytics Dashboard (SQL + Power BI)
 
+## Project Overview
 This project analyzes ride-booking data from a ride-hailing platform similar to OLA.
 The goal was to transform raw ride data into actionable business insights using MySQL and Power BI.
 
@@ -10,14 +10,13 @@ The goal was to transform raw ride data into actionable business insights using 
 -- Interactive Power BI dashboard with multiple views
 
 ## Tech Stack
-
--- SQL: MySQL (Data modeling, views, business queries)
--- Visualization: Power BI
--- Data Processing: Power Query
--- Dataset Size: 100K+ ride records
+SQL: MySQL (Data modeling, views, business queries)
+Visualization: Power BI
+Data Processing: Power Query
+Dataset Size: 100K+ ride records
 
 ## Database Schema
-``
+```sql
 CREATE TABLE ola_rides (
     date_time DATETIME,
     ride_time TIME,
@@ -39,7 +38,8 @@ CREATE TABLE ola_rides (
     driver_ratings DECIMAL(3,1),
     customer_rating DECIMAL(3,1),
     vehicle_images VARCHAR(255)
-);``
+);
+```
 
 ## SQL Analysis (Business Queries)
 
@@ -56,119 +56,146 @@ CREATE TABLE ola_rides (
 
 ## Business questions SQL Use Cases
 
-``1. Retrieve all successful bookings:
+1. Retrieve all successful bookings:
+```sql
 CREATE view successful_Bookings AS
 SELECT *
 FROM ola_rides
 where booking_status ='success';
-``
+```
 
-``
+
 2. Find the average ride distance for each vehicle type:
+```sql
 CREATE VIEW rides_distance_each_vehical AS
 SELECT vehicle_type, ROUND(AVG(ride_distance),2) AS Avg_distance
 FROM ola_rides
 GROUP BY vehicle_type;
-``
+```
 
-``
+
 3. Get the total number of cancelled rides by customers:
+```sql
 CREATE VIEW canceled_rides_by_customers AS
 SELECT COUNT(*)FROM ola_rides
 WHERE booking_status='Canceled by customer';
-``
+```
 
-``
+
 4. List the top 5 customers who booked the highest number of rides:
+```sql
 CREATE VIEW top_5_customers AS
 SELECT customer_id, COUNT(booking_id) AS total_rides
 FROM ola_rides
 GROUP BY customer_id
 ORDER BY total_rides DESC 
 LIMIT 5;
-``
+```
 
-``
 5. Get the number of rides cancelled by drivers due to personal and car-related issues:
+```sql
 CREATE VIEW cancelled_by_drivers_P_C_issues AS
 SELECT Count(*) FROM ola_rides 
 WHERE canceled_rides_by_driver = 'Personal & Car related issue';
-``
+```
 
-``
+
 6. Find the maximum and minimum driver ratings for Prime Sedan bookings:
+```sql
 CREATE VIEW max_min_Driver_ratings AS
 SELECT MAX(driver_ratings) AS max_rating,
 MIN(driver_ratings) AS min_rating
 FROM ola_rides
 WHERE vehicle_type = 'Prime Sedan'
 AND driver_ratings > 0;
-``
+```
 
-``
 7. Retrieve all rides where payment was made using UPI:
+```sql
 CREATE VIEW UPI_payments AS
 SELECT *
 FROM ola_rides
 WHERE payment_method ='UPI';
-``
+```
 
-``
+
 8. Find the average customer rating per vehicle type:
+```sql
 CREATE VIEW Avg_customer_ratings AS
 SELECT vehicle_type,ROUND(AVG(customer_rating),2) AS Avg_customer_rating
 FROM ola_rides
 GROUP BY vehicle_type;
-``
+```
 
-``
+
 9. Calculate the total booking value of rides completed successfully:
+```sql
 CREATE VIEW total_successful_Ride_values AS
 SELECT SUM(booking_value) AS total_successful_Ride_values
 FROM ola_rides
 WHERE booking_status='success';
-``
+```
 
-``
+
 10. List all incomplete rides along with the reason:
+```sql
 CREATE VIEW incomplete_rides_reason AS 
 SELECT booking_id,incomplete_rides_reason
 FROM ola_rides
 WHERE incomplete_rides='Yes';
-``
+```
 
 **Question Answers**
-``
+
 -- 1. Retrieve all successful bookings:
+``` sql
 SELECT *
-FROM sucessful_Bookings;``
+FROM sucessful_Bookings;
+``
 
-`` -- 2. Find the average ride distance for each vehicle type:
-SELECT * FROM rides_distance_each_vehical;``
+-- 2. Find the average ride distance for each vehicle type:
+```sql
+SELECT * FROM rides_distance_each_vehical;
+```
 
-`` -- 3. Get the total number of cancelled rides by customers:
-SELECT * FROM canceled_rides_by_customers;``
+-- 3. Get the total number of cancelled rides by customers:
+```sql
+SELECT * FROM canceled_rides_by_customers;
+```
 
-``-- 4. List the top 5 customers who booked the highest number of rides:
-SELECT * FROM top_5_customers;``
+-- 4. List the top 5 customers who booked the highest number of rides:
+```
+SELECT * FROM top_5_customers;
+```
 
-``-- 5. Get the number of rides cancelled by drivers due to personal and car-related issues:
-SELECT * FROM  cancelled_by_drivers_P_C_issues;``
+-- 5. Get the number of rides cancelled by drivers due to personal and car-related issues:
+```sql
+SELECT * FROM  cancelled_by_drivers_P_C_issues;
+```
 
-``-- 6. Find the maximum and minimum driver ratings for Prime Sedan bookings:
-SELECT * FROM max_min_Driver_ratings;``
+-- 6. Find the maximum and minimum driver ratings for Prime Sedan bookings:
+```sql
+SELECT * FROM max_min_Driver_ratings;
+```
 
-``-- 7. Retrieve all rides where payment was made using UPI:
+-- 7. Retrieve all rides where payment was made using UPI:
+```sql
 SELECT * FROM UPI_payments;``
-
-``-- 8. Find the average customer rating per vehicle type:
+```
+-- 8. Find the average customer rating per vehicle type:
+```sql
 SELECT * FROM Avg_customer_ratings;``
+```
 
-``-- 9. Calculate the total booking value of rides completed successfully:
+-- 9. Calculate the total booking value of rides completed successfully:
+```sql
 SELECT * FROM total_successful_Ride_values;``
+```
 
-``-- 10. List all incomplete rides along with the reason:
+-- 10. List all incomplete rides along with the reason:
+```sql
 SELECT * FROM incomplete_rides_reason; ``
+```
 
 ## Power BI Dashboard
 
@@ -248,3 +275,6 @@ OLA-Ride-Analytics/
 -- Entry-level data analyst portfolios
 -- SQL interview preparation
 -- Power BI dashboard showcases
+
+
+
