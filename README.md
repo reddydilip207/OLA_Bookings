@@ -5,15 +5,15 @@ This project analyzes ride-booking data from a ride-hailing platform similar to 
 The goal was to transform raw ride data into actionable business insights using MySQL and Power BI.
 
 ## The project includes:
--- SQL data modeling & business queries
--- Data cleaning and transformation
--- Interactive Power BI dashboard with multiple views
+- **SQL Views & business queries**
+- **Data cleaning and transformation**
+- **Interactive Power BI dashboard with multiple views**
 
 ## Tech Stack
-SQL: MySQL (Data modeling, views, business queries)
-Visualization: Power BI
-Data Processing: Power Query
-Dataset Size: 100K+ ride records
+- **SQL:** MySQL (views, business queries)
+- **Visualization:** Power BI
+- **Data Processing:** Power Query
+- **Dataset Size:** 100K+ ride records
 
 ## Database Schema
 ```sql
@@ -46,13 +46,13 @@ CREATE TABLE ola_rides (
 ## Created reusable SQL Views to answer business questions:
 
  ## Key Insights Extracted
--- Successful vs cancelled bookings
--- Average ride distance by vehicle type
--- Top 5 high-frequency customers
--- Cancellation reasons (driver vs customer)
--- Payment method distribution
--- Rating analysis by vehicle category
--- Incomplete ride diagnostics
+- **Successful vs cancelled bookings**
+- **Average ride distance by vehicle type**
+- **Top 5 high-frequency customers**
+- **Cancellation reasons (driver vs customer)**
+- **Payment method distribution**
+- **Rating analysis by vehicle category**
+- **Incomplete ride diagnostics**
 
 ## Business questions SQL Use Cases
 
@@ -164,7 +164,7 @@ SELECT * FROM canceled_rides_by_customers;
 ```
 
 -- 4. List the top 5 customers who booked the highest number of rides:
-```
+```sql
 SELECT * FROM top_5_customers;
 ```
 
@@ -201,60 +201,60 @@ SELECT * FROM incomplete_rides_reason; ``
 
 **The dashboard includes 5 interactive pages:**
 
-**Overall Summary** 
--- Total bookings & revenue
--- Booking status breakdown
--- Ride volume trend over time
+## Overall Summary 
+- **Total bookings & revenue**
+- **Booking status breakdown**
+- **Ride volume trend over time**
 
-**Vehicle Type Analysis**
--- Booking value by vehicle category
--- Avg distance & total distance travelled
--- Performance comparison across segments
+## Vehicle Type Analysis
+- **Booking value by vehicle category**
+- **Avg distance & total distance travelled**
+- **Performance comparison across segments**
 
-**Revenue Insights**
--- Revenue by payment method
--- Daily revenue trend
--- Top customers by booking value
+## Revenue Insights
+- **Revenue by payment method**
+- **Daily revenue trend**
+- **Top customers by booking value**
+- 
+## Cancellation Analysi
+- **Cancellation rate KPI**
+- **Customer vs driver cancellation breakdown**
+- **Detailed cancellation reasons**
 
-**Cancellation Analysis**
--- Cancellation rate KPI
--- Customer vs driver cancellation breakdown
--- Detailed cancellation reasons
-
-**Ratings Dashboard**
--- Driver ratings by vehicle type
--- Customer ratings comparison
--- Service quality insights 
+## Ratings Dashboard
+- **Driver ratings by vehicle type**
+- **Customer ratings comparison**
+- **Service quality insights**
+  
 ## Key KPIs
-
-📦 Total Bookings: 100K+
-💰 Total Revenue: 35M+
-❌ Cancellation Rate: ~10%
-⭐ Avg Ratings: ~4.0
+📦 **Total Bookings: 100K+**
+💰 **Total Revenue: 35M+**
+❌ **Cancellation Rate: ~10%**
+⭐ **Avg Ratings: ~4.0**
 
 ## Key Insights
--- UPI and Cash dominate payment methods
--- Cancellation rate is a major optimization area
--- Premium vehicle categories drive higher revenue
--- Ratings are consistently high across categories
+- **UPI and Cash dominate payment methods**
+- **Cancellation rate is a major optimization area**
+- **Premium vehicle categories drive higher revenue**
+- **Ratings are consistently high across categories**
 
 ## Skills Demonstrated
--- SQL data modeling & views
--- Business problem translation into queries
--- KPI design & dashboard storytelling
--- Real-world analytics workflow
+- **SQL data modeling & views**
+- **Business problem translation into queries**
+- **KPI design & dashboard storytelling**
+- **Real-world analytics workflow**
 
 ## Dashboard Preview
--- Overall Dashboard
--- Vehicle Analysis
--- Revenue Insights
--- Cancellation Analysis
--- Ratings Dashboard
+- **Overall Dashboard**
+- **Vehicle Analysis**
+- **Revenue Insights**
+- **Cancellation Analysis**
+- **Ratings Dashboard**
 
 
 ## Project Structure
 
-``
+``sql
 OLA-Ride-Analytics/
 │
 ├── SQL/
@@ -267,14 +267,14 @@ OLA-Ride-Analytics/
 ├── Dataset/
 │   └── OLA_Bookings.csv
 │
-└── README.md ``
+└── README.md ```
 
 ## Use Case
 
-**This project simulates a real-world ride-hailing analytics case study useful for:**
--- Entry-level data analyst portfolios
--- SQL interview preparation
--- Power BI dashboard showcases
+## This project simulates a real-world ride-hailing analytics case study useful for:
+- **Entry-level data analyst portfolios**
+- **SQL interview preparation**
+- **Power BI dashboard showcases**
 
 
 
