@@ -1,15 +1,17 @@
-## OLA Ride Analytics Dashboard (SQL + Power BI)
+## OLA Ride Analytics Dashboard (Excel + SQL + Power BI)
 
 ## Project Overview
 This project analyzes ride-booking data from a ride-hailing platform similar to OLA.
-The goal was to transform raw ride data into actionable business insights using MySQL and Power BI.
+The goal was to transform raw ride data into actionable business insights using Excel, MySQL and Power BI.
 
 ## The project includes:
+- **Excel Cleaning data**
 - **SQL Views & business queries**
 - **Data cleaning and transformation**
 - **Interactive Power BI dashboard with multiple views**
 
 ## Tech Stack
+- **Microsoft Excel for data cleaning**
 - **SQL:** MySQL (views, business queries)
 - **Visualization:** Power BI
 - **Data Processing:** Power Query
